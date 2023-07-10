@@ -1,0 +1,27 @@
+Ok here we go... Learning Spring Boot 3
+
+1- Spring MVC:
+Model+View+Controller
+
+a. Making a Content Record as a Model, it has some special stuff that had to be enums and normal stuff
+b. Making a ContentController Class as a Controller, @RestController (REST API for now)
+    a Controller is a class that accepts requests and returns. CRUD functionality
+    @RequestMapping for the URL - location
+c. Making a ContentCollectionRepository (not db) @Repository:
+    keep collection of pieces of content in the memory
+    needs a constructor, to make an instance out of it
+    need few methods to work with the instance
+d. Dependency injection of repository in the controller. @AutoWired
+e. Make a @GetMapping for receiving a GET request in  controller
+f. Make the PostConstruct in repository, for initialization of 1 piece of content
+g. Making the CRUD functionalities: Used Postman for testing. (used @ResponseStatus(HttpStatus...) along)
+    to find all pieces of content on "api/content"
+    to find 1 piece of content by id @GetMapping("/{id}") request, and @PathVariable to handle id
+    to create a new piece of content to the repo, @PostMapping, and @RequestBody to handle the input JSON body
+    to update an existing piece of content using @PutMapping("/{id}"), @PostMapping, and @RequestBody to find element and do the update
+    to delete a piece of content, @PutMapping("/{id}")
+h. create a simple vanilla frontend client using vite.js and fetch content from it
+    setup live server for the frontend project and run it
+    add @CrossOrigin to the controller to let the frontend access the content, for CORS security
+i.using validation constraints on the content model properties @NotBlank
+    must add @Valid to the POST create method in controller to accept only valid piece of content

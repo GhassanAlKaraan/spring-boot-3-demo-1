@@ -1,0 +1,22 @@
+### I use Postman or RESTful Tool instead of this.
+
+### Find all content
+GET http://localhost:8080/api/content
+
+### Get content by id
+GET http://localhost:8080/api/content
+
+### Create new Content
+POST http://localhost:8080/api/content
+Content-Type: application/json
+
+    {
+        "id": 2,
+        "title": "My second blog post",
+        "desc": "My second blog post",
+        "status": "IDEA",
+        "contentType": "ARTICLE",
+        "dateCreated": "2023-06-23T16:25:44.0470577",
+        "dateUpdated": null,
+        "url": ""
+    }
